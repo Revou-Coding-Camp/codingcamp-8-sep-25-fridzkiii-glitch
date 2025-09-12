@@ -1,22 +1,21 @@
-welcomeMessage();
-function welcomeMessage() {
-    let username = prompt("Please enter your name:");
-    if (username) {
-        document.getElementById('welcome-user').innerText = username;
-    }
-}
-
-function validateForm() {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
-
-    if (name === "" || email === "" || message === "") {
-        alert("All fields must be filled out");
-    } else {
-        alert("Form submitted successfully! Thank you, " + name + "!");
-        document.getElementById('name').value = "";
-        document.getElementById('email').value = "";
-        document.getElementById('message').value = "";
-    }
-}
+document.getElementById("menu-btn").addEventListener("click", function () {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("hidden");
+});
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const status = document.getElementById("form-status");
+  if (name && email && message) {
+    status.classList.remove("hidden");
+    status.textContent = "✅ Message sent successfully!";
+    status.classList.add("text-green-600");
+    this.reset();
+  } else {
+    status.classList.remove("hidden");
+    status.textContent = "⚠️ Please fill in all fields!";
+    status.classList.add("text-red-600");
+  }
+});
