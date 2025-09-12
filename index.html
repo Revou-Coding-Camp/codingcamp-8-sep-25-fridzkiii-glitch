@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Fridzkiii</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="font-sans text-gray-800 scroll-smooth">
-
   <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
@@ -26,10 +24,8 @@
           <li><a class="px-2 py-1 hover:text-blue-500" href="#message-us">Message Us</a></li>
         </ul>
       </nav>
-
       <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none">☰</button>
     </div>
-
     <nav id="menu" class="hidden md:hidden bg-gray-100">
       <ul class="flex flex-col items-center space-y-3 py-4">
         <li><a class="hover:text-blue-500" href="#home">Home</a></li>
@@ -39,15 +35,12 @@
       </ul>
     </nav>
   </header>
-
   <main class="pt-24">
-
     <section id="home"
       class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center px-4">
       <h1 class="text-3xl sm:text-5xl font-extrabold mb-4">Welcome <span class="text-yellow-300">User</span>!</h1>
       <p class="text-base sm:text-lg">This is my personal portfolio website</p>
     </section>
-
     <section id="profile" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 text-center">
       <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Our Profile</h2>
       <img src="me.jpg" alt="Profile Photo"
@@ -58,7 +51,6 @@
         I'm committed to continuous improvement.
       </p>
     </section>
-
     <section id="portfolio" class="min-h-screen flex flex-col items-center justify-center px-4">
       <h2 class="text-2xl sm:text-4xl font-semibold mb-8">Portfolio</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
@@ -72,7 +64,6 @@
               in any situation.</p>
           </div>
         </div>
-
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
           <img src="Podo.png" alt="Project 2" class="w-full h-48 object-cover">
           <div class="p-4">
@@ -81,7 +72,6 @@
               time using the Pomodoro technique. It features Work (25 min) and Break modes, with Start and Reset buttons.</p>
           </div>
         </div>
-
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
           <img src="ultah.png" alt="Project 3" class="w-full h-48 object-cover">
           <div class="p-4">
@@ -92,10 +82,9 @@
         </div>
       </div>
     </section>
-
     <section id="message-us" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
       <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Message Us</h2>
-      <form class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg space-y-4">
+      <form id="contact-form" class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg space-y-4">
         <div>
           <label for="name" class="block mb-2 font-medium">Name:</label>
           <input type="text" id="name" name="name"
@@ -111,89 +100,15 @@
           <textarea id="message" name="message" rows="4"
             class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
         </div>
-        <button type="button"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Send Message</button>
-      </form>
-    </section>
-  </main>
-    <section id="message-us" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Message Us</h2>
-      
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-        class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg space-y-4">
-        <div>
-          <label for="name" class="block mb-2 font-medium">Name:</label>
-          <input type="text" id="name" name="name" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-        </div>
-        <div>
-          <label for="email" class="block mb-2 font-medium">Email:</label>
-          <input type="email" id="email" name="email" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-        </div>
-        <div>
-          <label for="message" class="block mb-2 font-medium">Message:</label>
-          <textarea id="message" name="message" rows="4" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-        </div>
         <button type="submit"
           class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Send Message</button>
       </form>
-
-      <p class="text-sm text-gray-500 mt-4">*Pesan ini akan langsung masuk ke email kamu via Formspree.</p>
+      <p id="form-status" class="mt-4 text-green-600 font-medium hidden">Message sent successfully!</p>
     </section>
   </main>
-  <!-- Message Us -->
-    <section id="message-us" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Message Us</h2>
-      
-      <!-- Formspree Integration -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-        class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg space-y-4">
-        <div>
-          <label for="name" class="block mb-2 font-medium">Name:</label>
-          <input type="text" id="name" name="name" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-        </div>
-        <div>
-          <label for="email" class="block mb-2 font-medium">Email:</label>
-          <input type="email" id="email" name="email" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-        </div>
-        <div>
-          <label for="message" class="block mb-2 font-medium">Message:</label>
-          <textarea id="message" name="message" rows="4" required
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-        </div>
-        <button type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Send Message</button>
-      </form>
-
-      <p class="text-sm text-gray-500 mt-4">*Pesan ini akan langsung masuk ke email kamu via Formspree.</p>
-    </section>
-  </main>
-
   <footer class="bg-gray-800 text-white text-center p-4 text-sm">
     &copy; 2025 Fridzkiii. All rights reserved.
   </footer>
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    const menuLinks = menu.querySelectorAll("a");
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.add("hidden");
-      });
-    });
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
