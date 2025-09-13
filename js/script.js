@@ -2,20 +2,28 @@ document.getElementById("menu-btn").addEventListener("click", function () {
   const menu = document.getElementById("menu");
   menu.classList.toggle("hidden");
 });
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const status = document.getElementById("form-status");
-  if (name && email && message) {
-    status.classList.remove("hidden");
-    status.textContent = "✅ Message sent successfully!";
-    status.classList.add("text-green-600");
-    this.reset();
-  } else {
-    status.classList.remove("hidden");
-    status.textContent = "⚠️ Please fill in all fields!";
-    status.classList.add("text-red-600");
+function welcomeMessage() {
+  let username = prompt("Masukkan nama Anda:");
+  if (username) {
+    document.getElementById("welcome-user").innerText = username;
   }
-});
+}
+function validateForm() {
+  let name = document.getElementById("name").value;
+  let dob = document.getElementById("dob").value;
+  let gender = document.querySelector('input[name="gender"]:checked');
+  let message = document.getElementById("message").value;
+  if (name === "" || dob === "" || !gender || message === "") {
+    alert("Semua field harus diisi!");
+    return;
+  }
+  document.getElementById("out-name").innerText = name;
+  document.getElementById("out-dob").innerText = dob;
+  document.getElementById("out-gender").innerText = gender.value;
+  document.getElementById("out-message").innerText = message;
+
+  let now = new Date();
+  document.getElementById("current-time").innerText = now.toString();
+  alert("Form berhasil dikirim!");
+  document.getElementById("contact-form").reset();
+}
