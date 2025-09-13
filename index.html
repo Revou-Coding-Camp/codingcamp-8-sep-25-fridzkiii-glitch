@@ -11,10 +11,10 @@
   <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
-        <img src="pp.jpg" alt="Profile"
+        <img src="gambar/pp.jpg" alt="Profile"
           class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shadow-md">
         <span class="text-lg font-bold text-blue-600">Fridzkiii</span>
-      </div>
+      </div> 
 
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
@@ -43,7 +43,7 @@
     </section>
     <section id="profile" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 text-center">
       <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Our Profile</h2>
-      <img src="me.jpg" alt="Profile Photo"
+      <img src="gambar/me.jpg" alt="Profile Photo"
         class="w-28 h-28 sm:w-40 sm:h-40 rounded-full object-cover shadow-lg mb-4">
       <p class="max-w-2xl text-gray-600 text-sm sm:text-base leading-relaxed">
         Hi, I'm Farid. A vocational high school student majoring in Computer Networking (TJKT) and currently studying coding. 
@@ -56,7 +56,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
         
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="profil.png" alt="Project 1" class="w-full h-48 object-cover">
+          <img src="gambar/profil.png" alt="Project 1" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-bold">Website Profil Saya</h3>
             <p class="text-sm text-gray-500 leading-relaxed">Hello! I'm Farid, an active vocational high school student who enjoys 
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="Podo.png" alt="Project 2" class="w-full h-48 object-cover">
+          <img src="gambar/Podo.png" alt="Project 2" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-bold">Pomodoro Website</h3>
             <p class="text-sm text-gray-500 leading-relaxed">Pomodoro Timer is a simple app that helps you manage your study or work 
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="ultah.png" alt="Project 3" class="w-full h-48 object-cover">
+          <img src="gambar/ultah.png" alt="Project 3" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-bold">Websites Ulang Tahun</h3>
             <p class="text-sm text-gray-500 leading-relaxed">This birthday greeting website provides a unique and personalized surprise. 
@@ -82,29 +82,44 @@
         </div>
       </div>
     </section>
-    <section id="message-us" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 class="text-2xl sm:text-4xl font-semibold mb-6">Message Us</h2>
-      <form id="contact-form" class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg space-y-4">
-        <div>
-          <label for="name" class="block mb-2 font-medium">Name:</label>
-          <input type="text" id="name" name="name"
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+    <section id="message-us" class="py-16 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-semibold text-center mb-10 text-indigo-700">Message Us</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+
+          <form id="contact-form" class="bg-indigo-50 p-6 rounded-lg shadow">
+            <div class="mb-4">
+              <label for="name" class="block mb-2 font-semibold">Nama:</label>
+              <input type="text" id="name" class="border p-2 w-full rounded">
+            </div>
+            <div class="mb-4">
+              <label for="dob" class="block mb-2 font-semibold">Tanggal Lahir:</label>
+              <input type="date" id="dob" class="border p-2 w-full rounded">
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 font-semibold">Jenis Kelamin:</label>
+              <input type="radio" name="gender" value="Laki-laki"> Laki-laki
+              <input type="radio" name="gender" value="Perempuan" class="ml-4"> Perempuan
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block mb-2 font-semibold">Pesan:</label>
+              <textarea id="message" class="border p-2 w-full rounded" rows="4"></textarea>
+            </div>
+            <button type="button" onclick="validateForm();" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded">
+              Submit
+            </button>
+          </form>
+
+          <div id="output" class="bg-indigo-50 p-6 rounded-lg shadow">
+            <p><strong>Current time:</strong> <span id="current-time">-</span></p>
+            <p><strong>Nama:</strong> <span id="out-name">-</span></p>
+            <p><strong>Tanggal Lahir:</strong> <span id="out-dob">-</span></p>
+            <p><strong>Jenis Kelamin:</strong> <span id="out-gender">-</span></p>
+            <p><strong>Pesan:</strong> <span id="out-message">-</span></p>
+          </div>
         </div>
-        <div>
-          <label for="email" class="block mb-2 font-medium">Email:</label>
-          <input type="email" id="email" name="email"
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-        </div>
-        <div>
-          <label for="message" class="block mb-2 font-medium">Message:</label>
-          <textarea id="message" name="message" rows="4"
-            class="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-        </div>
-        <button type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Send Message</button>
-      </form>
-      <p id="form-status" class="mt-4 text-green-600 font-medium hidden">Message sent successfully!</p>
-    </section>
+      </div>
+    </section>
   </main>
   <footer class="bg-gray-800 text-white text-center p-4 text-sm">
     &copy; 2025 Fridzkiii. All rights reserved.
